@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rLc-fL-NbG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,106 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="XQg-hb-tPs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6q9-m8-aOg">
+                            <connections>
+                                <segue destination="bVe-8g-4Lm" kind="show" id="fqt-KC-bmj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="ktw-wW-SnH">
+            <objects>
+                <viewController id="bVe-8g-4Lm" customClass="CarViewController" customModule="CarCollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="BrS-e6-b8s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Car Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iA3-WM-nYk">
+                                <rect key="frame" x="97.5" y="292" width="180" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtQ-Ju-VNs">
+                                <rect key="frame" x="167" y="341" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addCarTapped:" destination="bVe-8g-4Lm" eventType="touchUpInside" id="sIb-6X-9BO"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mGK-Cs-Cjp">
+                                <rect key="frame" x="97" y="84" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="HvZ-c7-lXo"/>
+                                    <constraint firstAttribute="height" constant="180" id="lXE-11-Zhz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iA3-WM-nYk" firstAttribute="width" secondItem="mGK-Cs-Cjp" secondAttribute="width" id="2Lw-Ay-1nL"/>
+                            <constraint firstItem="dtQ-Ju-VNs" firstAttribute="centerX" secondItem="BrS-e6-b8s" secondAttribute="centerX" constant="-5.5" id="A1J-Oa-Iio"/>
+                            <constraint firstItem="dtQ-Ju-VNs" firstAttribute="top" secondItem="iA3-WM-nYk" secondAttribute="bottom" constant="19" id="AnC-0e-Fyz"/>
+                            <constraint firstItem="mGK-Cs-Cjp" firstAttribute="centerX" secondItem="BrS-e6-b8s" secondAttribute="centerX" id="R4q-xt-EZB"/>
+                            <constraint firstItem="mGK-Cs-Cjp" firstAttribute="top" secondItem="NRw-4W-cCr" secondAttribute="top" constant="20" id="jUN-1A-cfi"/>
+                            <constraint firstItem="iA3-WM-nYk" firstAttribute="top" secondItem="mGK-Cs-Cjp" secondAttribute="bottom" constant="28" id="vEl-2L-Luk"/>
+                            <constraint firstItem="iA3-WM-nYk" firstAttribute="centerX" secondItem="BrS-e6-b8s" secondAttribute="centerX" id="vrY-Yu-ckC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NRw-4W-cCr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="4aR-eG-ejZ">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="sO8-Kh-F7e">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="bVe-8g-4Lm" id="YP3-Vt-GWh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="AQg-i3-voZ">
+                                <connections>
+                                    <action selector="photosTapped:" destination="bVe-8g-4Lm" id="Om6-RF-CNe"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="carImage" destination="mGK-Cs-Cjp" id="rF8-Hd-foJ"/>
+                        <outlet property="titleTextField" destination="iA3-WM-nYk" id="z38-QE-3v5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrF-0C-7VP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1780" y="137.18140929535232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6UW-a8-cKm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rLc-fL-NbG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b8J-u0-6aY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DNv-Ff-HAJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MrG-dG-ySl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="-706"/>
         </scene>
     </scenes>
 </document>

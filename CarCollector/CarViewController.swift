@@ -50,7 +50,7 @@ class CarViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        carImage.image = image
+        carImageView.image = image
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
